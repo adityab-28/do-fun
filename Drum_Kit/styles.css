@@ -1,6 +1,7 @@
 body {
   text-align: center;
   background-color: #283149;
+  margin-top: 0.25rem;
 }
 footer{
   font-family: "Arvo";
@@ -14,7 +15,7 @@ h1 {
   font-family: "Arvo";
   font-weight: bold;
   text-shadow: 3px 0 #DA0463;
-
+  margin: 1rem auto;
 }
 
 footer {
@@ -78,10 +79,10 @@ background-image: url(images/kick.png);
   font-weight: 900;
   color: #DA0463;
   text-shadow: 4px 0 #DBEDF3;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   display: inline-block;
-  width: 8.75rem;
-  height: 8.75rem;
+  width: 8rem;
+  height: 8rem;
   text-align: center;
   margin: 0.625rem;
   background-color: white;
