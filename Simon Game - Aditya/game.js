@@ -1,4 +1,5 @@
 // Creating the button-color-array . . .
+var firstLoad = true;
 var buttonColours = ["red", "blue", "green", "yellow"];
 
 var gamePattern = [];
@@ -9,18 +10,7 @@ var started = false;
 var score = 0;
 var highScore = 0;
 
-// detect when a keyboard key has been pressed, when that happens for the first time, call nextSequence().
-$(document).keypress(() => {
-  // The h1 title starts out saying "Press A Key to Start",
-  //  when the game has started, change this to say "Level 0".
-  if (!started) {
-    $("#level-title").text("Level " + level);
-    nextSequence();
-    started = true;
-    $(".score-box").animate({opacity: 0});
-    $(".btn").animate({opacity: "100%"});
-  }
-});
+var viewSize = $(document).width();
 
 // detect when any of the buttons are clicked and trigger a handler function.
 $(".btn").click(function() {
@@ -35,38 +25,6 @@ $(".btn").click(function() {
   checkAnswer(userClickedPattern.length - 1);
 });
 
-// Create a new function called checkAnswer(), it should take one input with the name currentLevel.
-function checkAnswer(currentLevel) {
-  /*console.log(currentLevel + "  & ");
-  console.log("game Pattern : " + gamePattern);
-  console.log("userClickedPattern: " + userClickedPattern);*/
-  if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
-    // console.log("success");
-    if (userClickedPattern.length === gamePattern.length) {
-      setTimeout(function() {
-        nextSequence();
-      }, 1000);
-    }
-  } else {
-    // console.log("wrong");
-    playSound("wrong");
-    score = level;
-    if(score>highScore){ highScore = score;}
-    $("body").addClass("game-over");
-    $(".score-box").animate({opacity: "75%"});
-    $("#p1").text("Score : " + score );
-    $("#p2").text("\n High Score : " + highScore);
-
-    $("#level-title").text("Game Over, Press Any Key to Restart");
-    $(".btn").animate({opacity:"20%"});
-
-    setTimeout(() => {
-      $("body").removeClass("game-over");
-    }, 300);
-
-    startOver();
-  }
-}
 
 function nextSequence() {
   //Once nextSequence() is triggered, reset the userClickedPattern to an empty array ready for the next level.
@@ -107,4 +65,126 @@ function startOver() {
   level = 0;
   gamePattern = [];
   started = false;
+}
+
+if (viewSize <= 1120) {
+  if(firstLoad){
+    $("h1").text("Press Start button to play");
+    firstLoad=false;
+  }
+  $(".start-btn").click(() => {
+    // The h1 title starts out saying "Press A Key to Start",
+    //  when the game has started, change this to say "Level 0".
+    if (!started) {
+      $("#level-title").text("Level " + level);
+      nextSequence();
+      started = true;
+      $(".score-box").animate({
+        height: 1,
+        opacity: 0
+      });
+      $(".btn").animate({
+        opacity: "100%"
+      });
+    }
+  });
+
+  $(".start-btn").click(() => {
+    $(".start-btn").animate({width: 96,height:96},50).animate({width: 104, height: 104});
+  });
+
+  function checkAnswer(currentLevel) {
+    /*console.log(currentLevel + "  & ");
+    console.log("game Pattern : " + gamePattern);
+    console.log("userClickedPattern: " + userClickedPattern);*/
+    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+      // console.log("success");
+      if (userClickedPattern.length === gamePattern.length) {
+        setTimeout(function() {
+          nextSequence();
+        }, 1000);
+      }
+    } else {
+      // console.log("wrong");
+      playSound("wrong");
+      score = level;
+      if (score > highScore) {
+        highScore = score;
+      }
+      $("body").addClass("game-over");
+      $(".score-box").animate({
+        opacity: "80%",
+        border: "10%",
+        height: 320
+      }, 500);
+      $("#p1").text("Score : " + score);
+      $("#p2").text("High Score : " + highScore);
+
+      $("#level-title").text("Game Over, Press start to Play again");
+      $(".btn").animate({
+        opacity: "20%"
+      });
+
+      setTimeout(() => {
+        $("body").removeClass("game-over");
+      }, 300);
+
+      startOver();
+    }
+  }
+
+
+} else {
+  // detect when a keyboard key has been pressed, when that happens for the first time, call nextSequence().
+  $(document).keypress(() => {
+    // The h1 title starts out saying "Press A Key to Start",
+    //  when the game has started, change this to say "Level 0".
+    if (!started) {
+      $("#level-title").text("Level " + level);
+      nextSequence();
+      started = true;
+      $(".score-box").animate({
+        opacity: 0
+      });
+      $(".btn").animate({
+        opacity: "100%"
+      });
+    }
+  });
+
+  function checkAnswer(currentLevel) {
+    /*console.log(currentLevel + "  & ");
+    console.log("game Pattern : " + gamePattern);
+    console.log("userClickedPattern: " + userClickedPattern);*/
+    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+      // console.log("success");
+      if (userClickedPattern.length === gamePattern.length) {
+        setTimeout(function() {
+          nextSequence();
+        }, 1000);
+      }
+    } else {
+      // console.log("wrong");
+      playSound("wrong");
+      score = level;
+      if(score>highScore){ highScore = score;}
+      $("body").addClass("game-over");
+      $(".score-box").animate({
+        opacity: "80%",
+        border: "10%",
+        height: 320
+      },500);
+      $("#p1").text("Score : " + score );
+      $("#p2").text("\n High Score : " + highScore);
+
+      $("#level-title").text("Game Over, Press Any Key to Restart");
+      $(".btn").animate({opacity:"20%"});
+
+      setTimeout(() => {
+        $("body").removeClass("game-over");
+      }, 300);
+
+      startOver();
+    }
+  }
 }
