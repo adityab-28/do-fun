@@ -67,10 +67,13 @@ function startOver() {
   started = false;
 }
 
+
+///////////////===============================================//////////////////////
+
 if (viewSize <= 1120) {
-  if(firstLoad){
+  if (firstLoad) {
     $("h1").text("Press Start button to play");
-    firstLoad=false;
+    firstLoad = false;
   }
   $(".start-btn").click(() => {
     // The h1 title starts out saying "Press A Key to Start",
@@ -90,48 +93,54 @@ if (viewSize <= 1120) {
   });
 
   $(".start-btn").click(() => {
-    $(".start-btn").animate({width: 96,height:96},50).animate({width: 104, height: 104});
+    animate({
+      width: 44,
+      height: 44
+    }, 50).animate({
+      width: 52,
+      height: 52
+    });
   });
 
-  function checkAnswer(currentLevel) {
-    /*console.log(currentLevel + "  & ");
-    console.log("game Pattern : " + gamePattern);
-    console.log("userClickedPattern: " + userClickedPattern);*/
-    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
-      // console.log("success");
-      if (userClickedPattern.length === gamePattern.length) {
-        setTimeout(function() {
-          nextSequence();
-        }, 1000);
-      }
-    } else {
-      // console.log("wrong");
-      playSound("wrong");
-      score = level;
-      if (score > highScore) {
-        highScore = score;
-      }
-      $("body").addClass("game-over");
-      $(".score-box").animate({
-        opacity: "80%",
-        border: "10%",
-        height: 320
-      }, 500);
-      $("#p1").text("Score : " + score);
-      $("#p2").text("High Score : " + highScore);
-
-      $("#level-title").text("Game Over, Press start to Play again");
-      $(".btn").animate({
-        opacity: "20%"
-      });
-
-      setTimeout(() => {
-        $("body").removeClass("game-over");
-      }, 300);
-
-      startOver();
+function checkAnswer(currentLevel) {
+  /*console.log(currentLevel + "  & ");
+  console.log("game Pattern : " + gamePattern);
+  console.log("userClickedPattern: " + userClickedPattern);*/
+  if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+    // console.log("success");
+    if (userClickedPattern.length === gamePattern.length) {
+      setTimeout(function() {
+        nextSequence();
+      }, 1000);
     }
+  } else {
+    // console.log("wrong");
+    playSound("wrong");
+    score = level;
+    if (score > highScore) {
+      highScore = score;
+    }
+    $("body").addClass("game-over");
+    $(".score-box").animate({
+      opacity: "80%",
+      border: "10%",
+      height: 180
+    }, 500);
+    $("#p1").text("Score : " + score);
+    $("#p2").text("High Score : " + highScore);
+
+    $("#level-title").text("Game Over, Press start to Play again");
+    $(".btn").animate({
+      opacity: "20%"
+    });
+
+    setTimeout(() => {
+      $("body").removeClass("game-over");
+    }, 300);
+
+    startOver();
   }
+}
 
 
 } else {
@@ -167,18 +176,22 @@ if (viewSize <= 1120) {
       // console.log("wrong");
       playSound("wrong");
       score = level;
-      if(score>highScore){ highScore = score;}
+      if (score > highScore) {
+        highScore = score;
+      }
       $("body").addClass("game-over");
       $(".score-box").animate({
         opacity: "80%",
         border: "10%",
         height: 320
-      },500);
-      $("#p1").text("Score : " + score );
+      }, 500);
+      $("#p1").text("Score : " + score);
       $("#p2").text("\n High Score : " + highScore);
 
       $("#level-title").text("Game Over, Press Any Key to Restart");
-      $(".btn").animate({opacity:"20%"});
+      $(".btn").animate({
+        opacity: "20%"
+      });
 
       setTimeout(() => {
         $("body").removeClass("game-over");
