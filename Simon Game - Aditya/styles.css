@@ -85,7 +85,7 @@ body {
   
   #level-title {
     font-family: 'Press Start 2P', cursive;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin: 1%;
     color: #FEF2BF;
   }
@@ -119,8 +119,8 @@ body {
     .btn {
     margin: 1.5rem 1.5rem;
     display: inline-block;
-    height: 5.5rem;
-    width: 5.5rem;
+    height: 4.25rem;
+    width: 4.25rem;
     border: 0.35rem solid black;
     border-radius: 20%;
     transform: rotate(45deg);
