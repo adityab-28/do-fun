@@ -40,6 +40,14 @@ body {
   z-index: 1;
 }
 
+#score-title {
+  font-family: 'Press Start 2P';
+  font-size: 2.25rem;
+  font-weight: bold;
+  font-style: italic;
+  color: chocolate;
+}
+
 .level-score {
   text-align: center;
   position: absolute;
@@ -81,9 +89,8 @@ body {
 }
 
 /********************** For mobile screen **************************/
-@media (max-width: 900px) {
-  
-   #level-title {
+@media (max-width: 920px) {
+  #level-title {
     font-family: 'Press Start 2P', cursive;
     font-size: 1.5rem;
     margin: 5%;
@@ -102,7 +109,7 @@ body {
 
   #start {
     position: static;
-    padding-top: 40%;
+    padding-top: 20%;
     font-family: 'Press Start 2P', cursive;
     font-size: 0.5rem;
     color: #aa2ee6;
@@ -129,20 +136,33 @@ body {
   .score-box {
     /* visibility: hidden; */
     display: block;
-    width: 18.75rem;
+    width: 10rem;
+    height: 180px;
     margin: auto;
-    border: 0.45rem outset grey;
+    border: 0.45rem inset grey;
     background-color: #FEF2BF;
-    border-radius: 10%;
-    position: relative;
-    top: 2rem;
-    left: 1%;
+    border-radius: 15%;
+    position: absolute;
+    top: 40%;
     z-index: 1;
+  }
+  #score-title {
+    font-family: 'Press Start 2P';
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-style: italic;
+    color: chocolate;
+  }
+  #p1, #p2 {
+    color: purple;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: serif;
   }
 }
 
 /******************  Tablet Size  *********************/
-@media (min-width: 901px) and (max-width: 1120px) {
+@media (min-width: 921px) and (max-width: 1120px) {
   .start-btn {
     display: block;
     margin: 2.5rem auto 1.5rem;
@@ -151,7 +171,6 @@ body {
     border-radius: 12%;
     border: 0.6rem groove gold;
     height: 4rem;
-
   }
 
   #start {
@@ -160,6 +179,7 @@ body {
     font-size: 1.125rem;
     color: #FEF2BF;
   }
+
   .container {
     display: block;
     width: 50%;
