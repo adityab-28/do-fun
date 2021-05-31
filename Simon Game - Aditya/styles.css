@@ -83,17 +83,21 @@ body {
 /********************** For mobile screen **************************/
 @media (max-width: 720px) {
   .start-btn {
-    margin: 5rem auto auto;
+    margin: 4.5rem auto 1.5rem;
     display: block;
-    background-color: magenta;
-    width: 20%;
-    border-radius: 10%;
-    border: 0.3rem ridge gold;
-    height: 1.6rem;
-    padding-top: 2%;
+    background-color: #fdbaf8;
+    width: 6.5rem;
+    height: 6.25rem;
+    border-radius: 60%;
+    border: 0.4rem ridge #FFC947;
+  }
+
+  #start {
+    position: static;
+    padding-top: 40%;
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.9rem;
-    color: #FEF2BF;
+    font-size: 1.125rem;
+    color: #aa2ee6;
     font-weight: bold;
   }
 
@@ -101,13 +105,14 @@ body {
     display: block;
     width: 75%;
     margin: auto;
+    padding-top: 20%;
   }
 
   .btn {
-    margin: 1rem;
+    margin: 1.5rem 1.5rem;
     display: inline-block;
-    height: 8rem;
-    width: 8rem;
+    height: 7rem;
+    width: 7rem;
     border: 0.45rem solid black;
     border-radius: 20%;
     transform: rotate(45deg);
@@ -116,15 +121,14 @@ body {
   .score-box {
     /* visibility: hidden; */
     display: block;
-    width: 20rem;
-    /* height: 20rem; */
+    width: 18.75rem;
     margin: auto;
+    border: 0.45rem outset grey;
     background-color: #FEF2BF;
-    /* opacity: 0%; */
     border-radius: 10%;
     position: relative;
-    top: 40%;
-    right: 40%;
+    top: 2rem;
+    left: 1%;
     z-index: 1;
   }
 }
@@ -133,19 +137,21 @@ body {
 @media (min-width: 721px) and (max-width: 1120px) {
   .start-btn {
     display: block;
-    background-color: magenta;
-    width: 25%;
-    border-radius: 8%;
-    border: 0.5rem groove brown;
+    margin: 2.5rem auto 1.5rem;
+    background-color: blue;
+    width: 30%;
+    border-radius: 12%;
+    border: 0.6rem groove gold;
     height: 4rem;
-    padding-top: 3.5%;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 2rem;
-    margin: auto;
-    color: #FEF2BF;
-    font-weight: bold;
+
   }
 
+  #start {
+    padding-top: 15%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.125rem;
+    color: #FEF2BF;
+  }
   .container {
     display: block;
     width: 50%;
@@ -155,10 +161,11 @@ body {
   .btn {
     margin: 1.5625rem;
     display: inline-block;
-    height: 12.5rem;
-    width: 12.5rem;
+    height: 8.5rem;
+    width: 8.5rem;
     border: 0.625rem solid black;
     border-radius: 20%;
+    transform: rotate(22.5deg);
   }
 
   .score-box {
@@ -177,7 +184,7 @@ body {
   }
 }
 
-@media (min-width: 1121px){
+@media (min-width: 1121px) {
   .start-btn {
     visibility: hidden;
   }
