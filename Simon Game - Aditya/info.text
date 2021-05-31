@@ -1,0 +1,5 @@
+/* $("document, .start-btn").on("keypress, click", ()=>{ } */
+ --> the above query function uses .on(Event Handler Attachment) type so that,
+ it can work with both different types of inputs(i.e., "keypress" & "button-click").
+
+ /*----------------------------------------------------------*/
