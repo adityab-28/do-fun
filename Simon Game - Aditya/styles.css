@@ -82,6 +82,14 @@ body {
 
 /********************** For mobile screen **************************/
 @media (max-width: 900px) {
+  
+  #level-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.75rem;
+    margin: 1%;
+    color: #FEF2BF;
+  }
+  
   .start-btn {
     margin: 4.5rem auto 1.5rem;
     display: block;
@@ -108,12 +116,12 @@ body {
     padding-top: 20%;
   }
 
-  .btn {
+    .btn {
     margin: 1.5rem 1.5rem;
     display: inline-block;
-    height: 7rem;
-    width: 7rem;
-    border: 0.45rem solid black;
+    height: 5.5rem;
+    width: 5.5rem;
+    border: 0.35rem solid black;
     border-radius: 20%;
     transform: rotate(45deg);
   }
