@@ -83,28 +83,28 @@ body {
 /********************** For mobile screen **************************/
 @media (max-width: 900px) {
   
-  #level-title {
+   #level-title {
     font-family: 'Press Start 2P', cursive;
     font-size: 1.5rem;
-    margin: 1%;
+    margin: 5%;
     color: #FEF2BF;
   }
-  
+
   .start-btn {
-    margin: 4.5rem auto 1.5rem;
+    margin: 3.5rem auto 1.5rem;
     display: block;
     background-color: #fdbaf8;
-    width: 6.5rem;
-    height: 6.25rem;
-    border-radius: 60%;
-    border: 0.4rem ridge #FFC947;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    border: 0.4rem solid #FFC947;
   }
 
   #start {
     position: static;
     padding-top: 40%;
     font-family: 'Press Start 2P', cursive;
-    font-size: 1.125rem;
+    font-size: 0.5rem;
     color: #aa2ee6;
     font-weight: bold;
   }
@@ -116,11 +116,11 @@ body {
     padding-top: 20%;
   }
 
-    .btn {
+  .btn {
     margin: 1.5rem 1.5rem;
     display: inline-block;
-    height: 4.25rem;
-    width: 4.25rem;
+    height: 3.5rem;
+    width: 3.5rem;
     border: 0.35rem solid black;
     border-radius: 20%;
     transform: rotate(45deg);
