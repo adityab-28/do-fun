@@ -1,0 +1,64 @@
+.instructions {
+  background-color: #ffdf6b;
+  opacity: 0%;
+  text-align: center;
+  border: 0.35rem groove chocolate;
+  border-radius: 7.5%;
+  margin: 1.5rem auto;
+  padding: 8px;
+  width: 75%;
+  display: inline-block;
+  position: relative;
+  top: -30rem;
+  z-index: 2;
+}
+
+.ins-title {
+  color: #00adb5;
+  font-family: 'Yeon Sung', cursive;
+  font-weight: bold;
+  font-size: 1.125rem;
+  border: 0.2rem dashed brown;
+  border-radius: 10%;
+  padding: 0.625rem;
+  margin: 0.5rem auto;
+  width: 50%;
+}
+
+.ins-text {
+  color: #511281;
+  font-family: 'Courgette', cursive;
+  text-align: left;
+  line-height: 1.5;
+}
+
+#ins-quote{
+  color: #0a81ab;
+}
+
+.help-btn {
+  color: #FEF2BF;
+  text-align: left;
+  display: inline;
+  position: relative;
+  bottom: -5%;
+  left: -40%;
+  z-index: 3;
+}
+
+#ins-btn {
+  background: #1588d4;
+  background-image: -webkit-linear-gradient(top, #1588d4, #5b22c7);
+  background-image: -moz-linear-gradient(top, #1588d4, #5b22c7);
+  background-image: -ms-linear-gradient(top, #1588d4, #5b22c7);
+  background-image: -o-linear-gradient(top, #1588d4, #5b22c7);
+  background-image: linear-gradient(to bottom, #1588d4, #5b22c7);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
