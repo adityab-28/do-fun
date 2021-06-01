@@ -1,27 +1,13 @@
 // Creating the button-color-array . . .
-var firstLoad = true;
-var buttonColours = ["red", "blue", "green", "yellow"];
-
-var gamePattern = [];
-var userClickedPattern = [];
-
-var level = 0;
-var started = false;
-var score = 0;
-var highScore = 0;
-
-var viewSize = $(document).width();
+var firstLoadMob = true;var buttonColours = ["red", "blue", "green", "yellow"];var gamePattern = [];var userClickedPattern = [];var level = 0;var started = false;var score = 0;var highScore = 0;var viewSize = $(document).width();
 
 // detect when any of the buttons are clicked and trigger a handler function.
 $(".btn").click(function() {
   //Inside the handler, create a new variable called userChosenColour to store the id of the button that got clicked.
   var userChosenColour = $(this).attr("id");
   userClickedPattern.push(userChosenColour);
-  // console.log(userClickedPattern);
-  //play the sound of corresponding button detected. . .
   playSound(userChosenColour);
   animatePress(userChosenColour);
-
   checkAnswer(userClickedPattern.length - 1);
 });
 
@@ -45,8 +31,7 @@ function nextSequence() {
 
 }
 
-// Create a new function called animatePress(),
-//  it should take a single input parameter called currentColour.
+
 function animatePress(currentColour) {
   $("#" + currentColour).addClass("pressed");
   setTimeout(function() {
@@ -67,25 +52,19 @@ function startOver() {
   started = false;
 }
 
-
-///////////////===============================================//////////////////////
-
-if (viewSize <= 1120) {
-  if (firstLoad) {
+if (viewSize <= 1024) {
+  if (firstLoadMob) {
     $("h1").text("Press Start button to play");
-    firstLoad = false;
+
+    firstLoadMob = false;
   }
   $(".start-btn").click(() => {
-    // The h1 title starts out saying "Press A Key to Start",
-    //  when the game has started, change this to say "Level 0".
-    if (!started) {
+
+    if (!started && (!firstLoadMob)) {
       $("#level-title").text("Level " + level);
       nextSequence();
+      $(".score-box").fadeOut(200);
       started = true;
-      $(".score-box").animate({
-        height: 1,
-        opacity: 0
-      });
       $(".btn").animate({
         opacity: "100%"
       });
@@ -93,19 +72,17 @@ if (viewSize <= 1120) {
   });
 
   $(".start-btn").click(() => {
-    animate({
-      width: 44,
-      height: 44
-    }, 50).animate({
-      width: 52,
-      height: 52
-    });
+    $(".start-btn").animate({
+      width: 64,
+      height: 64
+    }, 80).animate({
+      width: 72,
+      height: 72
+    },80);
+    $("#start").animate({fontSize:11.8},80).animate({fontSize:12.8},80);
   });
 
 function checkAnswer(currentLevel) {
-  /*console.log(currentLevel + "  & ");
-  console.log("game Pattern : " + gamePattern);
-  console.log("userClickedPattern: " + userClickedPattern);*/
   if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
     // console.log("success");
     if (userClickedPattern.length === gamePattern.length) {
@@ -120,12 +97,9 @@ function checkAnswer(currentLevel) {
     if (score > highScore) {
       highScore = score;
     }
+    $(".score-box").fadeIn(500);
     $("body").addClass("game-over");
-    $(".score-box").animate({
-      opacity: "80%",
-      border: "10%",
-      height: 180
-    }, 500);
+
     $("#p1").text("Score : " + score);
     $("#p2").text("High Score : " + highScore);
 
@@ -144,17 +118,12 @@ function checkAnswer(currentLevel) {
 
 
 } else {
-  // detect when a keyboard key has been pressed, when that happens for the first time, call nextSequence().
   $(document).keypress(() => {
-    // The h1 title starts out saying "Press A Key to Start",
-    //  when the game has started, change this to say "Level 0".
     if (!started) {
       $("#level-title").text("Level " + level);
       nextSequence();
       started = true;
-      $(".score-box").animate({
-        opacity: 0
-      });
+      $(".score-box").fadeOut(200);
       $(".btn").animate({
         opacity: "100%"
       });
@@ -162,9 +131,7 @@ function checkAnswer(currentLevel) {
   });
 
   function checkAnswer(currentLevel) {
-    /*console.log(currentLevel + "  & ");
-    console.log("game Pattern : " + gamePattern);
-    console.log("userClickedPattern: " + userClickedPattern);*/
+
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
       // console.log("success");
       if (userClickedPattern.length === gamePattern.length) {
@@ -180,11 +147,8 @@ function checkAnswer(currentLevel) {
         highScore = score;
       }
       $("body").addClass("game-over");
-      $(".score-box").animate({
-        opacity: "80%",
-        border: "10%",
-        height: 320
-      }, 500);
+      $(".score-box").fadeIn(500);
+      $("#score-title").text("Score Board");
       $("#p1").text("Score : " + score);
       $("#p2").text("\n High Score : " + highScore);
 
