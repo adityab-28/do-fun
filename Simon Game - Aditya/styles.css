@@ -9,10 +9,7 @@ body {
   margin: 5%;
   color: #FEF2BF;
 }
-.footr{
-  position: relative;
-  bottom: -3rem;
-}
+
 .container {
   display: block;
   width: 50%;
