@@ -26,15 +26,14 @@ body {
 }
 
 .score-box {
-  visibility: hidden;
+  /* visibility: hidden; */
   display: block;
   width: 20rem;
   height: 20rem;
   margin: auto;
   background-color: #FEF2BF;
-  opacity: 100%;
-  border-radius: 12%;
-  border: 0.85rem ridge grey;
+  opacity: 0%;
+  border-radius: 10%;
   position: absolute;
   top: 40%;
   right: 4%;
@@ -47,6 +46,13 @@ body {
   font-weight: bold;
   font-style: italic;
   color: chocolate;
+}
+
+.level-score {
+  text-align: center;
+  position: absolute;
+  top: 35%;
+  right: 25%;
 }
 
 #p1, #p2 {
@@ -83,7 +89,7 @@ body {
 }
 
 /********************** For mobile screen **************************/
-@media (max-width: 960px) {
+@media (max-width: 920px) {
   #level-title {
     font-family: 'Press Start 2P', cursive;
     font-size: 1.5rem;
@@ -92,12 +98,12 @@ body {
   }
 
   .start-btn {
-    margin: 4rem auto 1.5rem;
+    margin: 3.5rem auto 1.5rem;
     display: block;
     background-color: #fdbaf8;
-    width: 4.5rem;
-    height: 4.5rem;
-    border-radius: 48%;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
     border: 0.4rem solid #FFC947;
   }
 
@@ -105,30 +111,30 @@ body {
     position: static;
     padding-top: 40%;
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     color: #aa2ee6;
     font-weight: bold;
   }
 
   .container {
     display: block;
-    width: 90%;
+    width: 75%;
     margin: auto;
-    padding-top: 15%;
+    padding-top: 20%;
   }
 
   .btn {
     margin: 1.5rem 1.5rem;
     display: inline-block;
-    height: 4.25rem;
-    width: 4.25rem;
-    border: 0.4rem solid black;
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 0.35rem solid black;
     border-radius: 20%;
     transform: rotate(45deg);
   }
 
   .score-box {
-    visibility: hidden;
+    /* visibility: hidden; */
     display: block;
     width: 10rem;
     height: 180px;
@@ -137,11 +143,9 @@ body {
     background-color: #FEF2BF;
     border-radius: 15%;
     position: absolute;
-    top: 30%;
-    right: 2%;
+    top: 40%;
     z-index: 1;
   }
-
   #score-title {
     font-family: 'Press Start 2P';
     font-size: 1.25rem;
@@ -149,7 +153,6 @@ body {
     font-style: italic;
     color: chocolate;
   }
-
   #p1, #p2 {
     color: purple;
     font-size: 1rem;
@@ -159,7 +162,7 @@ body {
 }
 
 /******************  Tablet Size  *********************/
-@media (min-width: 961px) and (max-width: 1024px) {
+@media (min-width: 921px) and (max-width: 1120px) {
   .start-btn {
     display: block;
     margin: 2.5rem auto 1.5rem;
@@ -194,12 +197,13 @@ body {
   }
 
   .score-box {
-    visibility: hidden;
+    /* visibility: hidden; */
     display: block;
     width: 20rem;
     height: 20rem;
     margin: auto;
     background-color: #FEF2BF;
+    opacity: 0%;
     border-radius: 10%;
     position: absolute;
     top: 40%;
