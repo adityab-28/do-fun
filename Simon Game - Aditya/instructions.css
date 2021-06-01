@@ -3,13 +3,12 @@
   opacity: 0%;
   text-align: center;
   border: 0.35rem groove chocolate;
-  border-radius: 7.5%;
-  margin: 1.5rem auto;
-  padding: 8px;
+  border-radius: 5%;
+  margin: .75rem auto;
   width: 75%;
   display: inline-block;
   position: relative;
-  top: -30rem;
+  top: -31rem;
   z-index: 2;
 }
 
