@@ -60,7 +60,7 @@ if (viewSize <= 1024) {
   }
   $(".start-btn").click(() => {
 
-    if (!started && (!firstLoadMob)) {
+    if (!started) {
       $("#level-title").text("Level " + level);
       nextSequence();
       $(".score-box").fadeOut(200);
@@ -100,8 +100,8 @@ function checkAnswer(currentLevel) {
     $(".score-box").fadeIn(500);
     $("body").addClass("game-over");
 
-    $("#p1").text("Score : " + score);
-    $("#p2").text("High Score : " + highScore);
+    $("#p1").text("Score : Lv." + score);
+    $("#p2").text("High Score : Lv." + highScore);
 
     $("#level-title").text("Game Over, Press start to Play again");
     $(".btn").animate({
