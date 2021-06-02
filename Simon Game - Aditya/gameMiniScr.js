@@ -3,7 +3,7 @@ var firstTime = true;
 $(".help-btn").click(function() {  if (firstTime) {  $("#ins-btn").text("Close");  firstTime = false;  }  $(".instructions").slideToggle(500);  $(".help-btn").fadeOut(100).fadeIn(100);});
 if (firstTime) {  $(".instructions").animate({  opacity: "90%"  }, 500);
   // $(".btn, .start-btn, #level-title").css("opacity","30%");
-} $("#ins-btn").click(() => {  if (firstTime) {  $(".instructions").fadeOut(500);
+} $("#ins-btn").click(() => {  if (firstTime) {  $(".instructions").fadeOut(500); $("#ins-btn").text("Close");
     // $(".btn, .start-btn, #level-title").animate({opacity:1},100);
   $(".info-section").animate({  opacity: 0.93  }, 500);  firstTime = false;  } else {  $(".instructions").slideToggle(500);  }});
 
