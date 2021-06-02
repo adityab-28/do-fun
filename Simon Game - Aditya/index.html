@@ -5,7 +5,8 @@
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon Game</title>
   <link rel="icon" href="favicon_io/favicon.ico">
-
+  
+  <link rel="stylesheet" href="info.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="instructions.css">
 
@@ -22,6 +23,9 @@
   <div class="help-btn">
     <i class="fas fa-question-circle fa-2x"></i>
     <!-- <img src="images/info_guide.png" alt="instructions button" width="32" height="32"> -->
+  </div>
+  <div class="info-btn">
+    <i class="fas fa-info-circle fa-2x"></i>
   </div>
 
   <div class="container">
@@ -63,9 +67,9 @@
   <div class="instructions">
     <h2 class="ins-title"><em>Basic Instructions</em></h3>
     <ol class= "ins-text">
-      <li>In this game you have to repeat the color patterns(🟩->🟥->🟦)</li>
+      <li>In this game, you have to repeat the color sequence.(🟩->🟥->🟦)</li>
       <li>At the begining of each level one <strong>"color"</strong> blinks.</li>
-      <li>Next, you have to tap the <strong>color</strong> in the same order from the <strong>color</strong> ,which blinked at the begining of the game, to the <strong>"color"</strong> blinked at last.</li>
+      <li>Next, you have to tap the <strong>colors</strong> in the same order from the first <strong>color</strong>, blinked at the begining to the <strong>"color"</strong> that blinked at last.</li>
       <li>If you tap in correct order, the level will advance.</li>
       <li>Well, <span id="ins-quote">See How Far you can Go! </span> </li>
 
@@ -74,6 +78,13 @@
       <strong>Good Luck!</strong>
     </p>
     <button type="button" id ="ins-btn">Proceed</button>
+  </div>
+  
+  <div class="info-section">
+    <h2 class="ins-title" style="color: #ce1f6a; width:30%; padding: 0.375rem">About</h2>
+    <p class="info-txt">This <b class="info-block">Mini-Game</b> is specially made by to check and exercise your Brain ability of remembering Patterns.<br> It looks <i><span style="color : #fb3640;">Simple,</span></i> but trust me it's not.</p>
+    <p class="info-txt"> <em>If you are able to reach beyond <strong class="info-block">level 15,</strong> <br>then your remembering ability is <strong class="info-block">Admirable</strong>.</em> </p>
+    <button type="button" id ="about-btn">Proceed</button>
   </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -96,4 +107,3 @@
 <hr class="footr" Size=2 noshade>
 <footer class="footr"><strong>©2021 Aditya Bharti</strong></footer>
 </html>
-
