@@ -4,11 +4,12 @@
   text-align: center;
   border: 0.35rem groove chocolate;
   border-radius: 5%;
-  margin: .75rem auto;
+  margin: 1rem auto;
   width: 75%;
   display: inline-block;
-  position: relative;
-  top: -31rem;
+  position: absolute;
+  top: 18.5%;
+  left: 11%;
   z-index: 2;
 }
 
@@ -21,7 +22,7 @@
   border-radius: 10%;
   padding: 0.625rem;
   margin: 0.5rem auto;
-  width: 50%;
+  width: 60%;
 }
 
 .ins-text {
@@ -36,7 +37,7 @@
 }
 
 .help-btn {
-  color: #FEF2BF;
+  color: #fff5ab;
   text-align: left;
   display: inline;
   position: relative;
